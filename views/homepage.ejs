@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Uploads</title>
+    <style>
+        h1{
+            margin-bottom: 0px;
+        }
+        h2{
+            border: 3px solid black;
+            display: inline-block;
+        }
+       button{
+        background-color: white;
+        border: 2px solid black;
+        cursor: pointer;
+        margin-top: 5px;
+        border-radius: 5px;
+       }
+       button:hover,h2:hover{
+        background-color: black;
+        color: white;
+        transition: 0.5s ease-out;
+       }
+       
+    </style>
+</head>
+<body>
+    <!-- for uploading file the attribute enctype that is shortened for encryption type is necessary. -->
+
+    <h1>Upload a file.</h1> 
+    <h2>Browse a file</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="profileImage">
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
+
+<!-- The encoding process occurs before data is transmitted to a server, where spaces are replaced with (+) symbols and non-alphanumeric or special characters are converted into their hexadecimal (0-9, A-F) values based on the ASCII character set. This ensures that the data is in a standardized format suitable for transmission over the Internet. The primary purpose of encoding is to standardize the data, making it compatible with Internet transfer.
+
+Multipart form data --
+The ENCTYPE attribute of the <form> tag defines the encoding method used for form data. It is one of two encoding methods available for HTML forms and is particularly necessary when file uploads are involved. This attribute allows the form data to be sent to the server in multiple parts, accommodating the large size of files. -->
+
+     <!-- How multipart/form-data Works
+    When you submit a form using multipart/form-data, the browser creates a request body that is divided into multiple parts, each separated by a boundary string.
+    
+    Boundary: A unique string that separates each part of the payload.
+    Each part contains:
+    Headers (e.g., Content-Disposition, Content-Type)
+    The actual data
+     -->
